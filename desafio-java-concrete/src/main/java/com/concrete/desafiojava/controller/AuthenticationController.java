@@ -1,5 +1,6 @@
 package com.concrete.desafiojava.controller;
 
+import java.time.LocalDateTime;
 import java.util.Collections;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -60,6 +61,8 @@ public class AuthenticationController {
 
 		User user = userRepository.findByEmail(authentication.getName())
 				.orElseThrow(() -> new AppException("Couldn't find Email or password"));
+		
+		user.setLastLogin(LocalDateTime.now());
 
 		// String jwt = tokenProvider.generateToken(user.getId());
 

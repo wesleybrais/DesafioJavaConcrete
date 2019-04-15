@@ -31,9 +31,6 @@ public abstract class DateAudit implements Serializable {
 	@LastModifiedDate
 	private LocalDateTime modified;
 	
-	@LastModifiedDate
-	private LocalDateTime lastLogin;
-	
 	public LocalDateTime getCreated() {
 		return created;
 	}
@@ -48,14 +45,6 @@ public abstract class DateAudit implements Serializable {
 	
 	public void setModified(LocalDateTime modified) {
 		this.modified = modified;
-	}
-	
-	public LocalDateTime getLastLogin() {
-		return lastLogin;
-	}
-	
-	public void setLastLogin(LocalDateTime lastLogin) {
-		this.lastLogin = lastLogin;
 	}
 	
 }

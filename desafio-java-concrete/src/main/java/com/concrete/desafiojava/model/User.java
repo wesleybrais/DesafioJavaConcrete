@@ -1,5 +1,6 @@
 package com.concrete.desafiojava.model;
 
+import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -32,6 +33,7 @@ public class User extends DateAudit {
 	private String email;
 	private String password;
 	private String accessToken;
+	private LocalDateTime lastLogin = LocalDateTime.now();
 
 	@ElementCollection
 	private List<Phone> phones;
@@ -92,6 +94,14 @@ public class User extends DateAudit {
 	
 	public void setAccessToken(String accessToken) {
 		this.accessToken = accessToken;
+	}
+
+	public LocalDateTime getLastLogin() {
+		return lastLogin;
+	}
+
+	public void setLastLogin(LocalDateTime lastLogin) {
+		this.lastLogin = lastLogin;
 	}
 
 	public List<Phone> getPhones() {
